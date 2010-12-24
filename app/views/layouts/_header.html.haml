@@ -1,0 +1,10 @@
+%header
+  %h1 Total Iceland
+  %nav
+    %ul
+      %li{:class => "first"}
+        = link_to "Home".html_safe, root_path
+      %li
+        = link_to "Sign In".html_safe, signin_path
+      %li{:class => "last"}
+        = link_to "About".html_safe, about_path
