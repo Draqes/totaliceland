@@ -5,6 +5,10 @@ Totaliceland::Application.routes.draw do
 
   resources :users
 
+  root :to => "pages#home"
+  match '/about', :to => "pages#about"
+  match '/signin', :to => "pages#signin"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

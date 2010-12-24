@@ -1,13 +1,115 @@
-// This import applies a global reset to any page that imports this stylesheet.
 @import "blueprint/reset";
-
-// To configure blueprint, edit the partials/base.sass file.
 @import "partials/base";
-
-// Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
+@import "blueprint/scaffolding";
+@import "compass/utilities";
 
-// Combine the partials into a single screen stylesheet.
-@import "partials/page";
-@import "partials/form";
-@import "partials/two_col";
+@include blueprint-scaffolding;
+@include blueprint-utilities;
+@include blueprint-grid;
+@include blueprint-typography;
+@include blueprint-debug;
+@include blueprint-form;
+@include blueprint-scaffolding;
+
+/* Mixins */
+
+@mixin rounded($cut) {
+  border-radius: $cut;
+  -moz-border-radius: $cut;
+  -webkit-border-radius: $cut;
+}
+
+/* Colors */
+
+$white: #FFF;
+$pale: #F2F2F2;
+$ti-blue: #3D34FA;
+$persian-red: #CC3333;
+
+/* Constants */
+
+$grid-width: $blueprint-grid-width;
+$grid-margin: $blueprint-grid-margin;
+$grid-span: $blueprint-grid-width + $blueprint-grid-margin; 
+$grid-height: 18px;
+
+/* Body */
+
+body.general {
+
+  #container {
+    @include container;   
+  }
+
+  header, footer, section {
+    @include column(24);  
+  }
+
+  header, footer, section {
+    a {
+      @include hover-link;
+    }
+  }
+
+  header, #content {
+    @include rounded(4px);
+    background: $white;
+  }
+
+  header {
+    position: relative;
+    
+    h1 {
+      @include replace-text("totaliceland.png");
+      width: 400px;
+      height: 100px;
+      padding-left: $grid-span;
+      margin-bottom: 0;
+    }
+    nav {
+      @include horizontal-list;
+      @include rounded(5px);
+      position: absolute;
+      background-color: $persian-red; 
+      whitespace: nowrap;  
+      top: $grid-height;
+      right: $grid-width + $grid-margin;
+      ul {
+        margin: 0 0.5em;
+        padding: 0;
+        li {
+          padding: 0.5em 0;
+          a {
+            padding: 0 5px;
+            font-weight: bold;
+            color: $white;
+          }
+        }      
+      }
+    }
+  }
+
+  section {
+    font-size: 120%;
+    margin-top: $grid-height;
+  }
+
+  #content {
+    padding-left: $grid-span;     
+  }
+
+  footer {
+    margin-top: $grid-height;
+    padding-left: $grid-span;
+    nav {
+      @include horizontal-list;
+    } 
+  }
+
+}
+
+body#demo {
+  background-color: $persian-red; 
+}
+
