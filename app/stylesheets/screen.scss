@@ -12,21 +12,104 @@
 @include blueprint-form;
 @include blueprint-scaffolding;
 
-$joe_public: #fff;
+/* Mixins */
 
-#header, #footer {
-  @include column(24);
+@mixin rounded($cut) {
+  border-radius: $cut;
+  -moz-border-radius: $cut;
+  -webkit-border-radius: $cut;
 }
 
-#container {
-  @include container;
+/* Colors */
+
+$white: #FFF;
+$pale: #F2F2F2;
+$ti-blue: #3D34FA;
+$persian-red: #CC3333;
+
+/* Constants */
+
+$grid-width: $blueprint-grid-width;
+$grid-margin: $blueprint-grid-margin;
+$grid-span: $blueprint-grid-width + $blueprint-grid-margin; 
+$grid-height: 18px;
+
+/* Body */
+
+body.general {
+
+  #container {
+    @include container;   
+  }
+
+  header, footer, section {
+    @include column(24);  
+  }
+
+  header, footer, section {
+    a {
+      @include hover-link;
+    }
+  }
+
+  header, #content {
+    @include rounded(4px);
+    background: $white;
+  }
+
+  header {
+    position: relative;
+    
+    h1 {
+      @include replace-text("totaliceland.png");
+      width: 400px;
+      height: 100px;
+      padding-left: $grid-span;
+      margin-bottom: 0;
+    }
+    nav {
+      @include horizontal-list;
+      @include rounded(5px);
+      position: absolute;
+      background-color: $persian-red; 
+      whitespace: nowrap;  
+      top: $grid-height;
+      right: $grid-width + $grid-margin;
+      ul {
+        margin: 0 0.5em;
+        padding: 0;
+        li {
+          padding: 0.5em 0;
+          a {
+            padding: 0 5px;
+            font-weight: bold;
+            color: $white;
+          }
+        }      
+      }
+    }
+  }
+
+  section {
+    font-size: 120%;
+    margin-top: $grid-height;
+  }
+
+  #content {
+    padding-left: $grid-span;     
+  }
+
+  footer {
+    margin-top: $grid-height;
+    padding-left: $grid-span;
+    nav {
+      @include horizontal-list;
+    } 
+  }
+
 }
 
-#sidebar {
-  @include column(8);
-}
-
-#content {
-  @include column(16, last);
+body#demo {
+  background-color: $persian-red; 
 }
 
