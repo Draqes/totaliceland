@@ -1363,7 +1363,7 @@ body.general header nav {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   position: absolute;
-  background-color: #cc3333;
+  background-color: #6495ed;
   whitespace: nowrap;
   top: 18px;
   right: 40px;
@@ -1447,5 +1447,5 @@ body.general footer nav li:last-child, body.general footer nav li.last {
 
 /* line 111, ../../../app/stylesheets/screen.scss */
 body#demo {
-  background-color: #cc3333;
+  background-color: #6495ed;
 }

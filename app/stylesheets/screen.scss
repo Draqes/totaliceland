@@ -24,7 +24,7 @@
 
 $white: #FFF;
 $ti-blue: #3D34FA;
-$persian-red: #CC3333;
+$background: #6495ED;
 
 /* Constants */
 
@@ -70,7 +70,7 @@ body.general {
       @include horizontal-list;
       @include rounded(5px);
       position: absolute;
-      background-color: $persian-red; 
+      background-color: $background; 
       whitespace: nowrap;  
       top: $grid-height;
       right: $grid-width + $grid-margin;
@@ -109,6 +109,6 @@ body.general {
 }
 
 body#demo {
-  background-color: $persian-red; 
+  background-color: $background; 
 }
 

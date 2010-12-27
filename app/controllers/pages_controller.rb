@@ -4,8 +4,8 @@ class PagesController < ApplicationController
     @title = "Home"
   end
 
-  def contact
-    @title = "Contact"
+  def signin
+    @title = "Sign In"
   end
 
   def about
