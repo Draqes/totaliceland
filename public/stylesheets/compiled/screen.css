@@ -1301,14 +1301,14 @@ form.inline p {
 /* Colors */
 /* Constants */
 /* Body */
-/* line 40, ../../../app/stylesheets/screen.scss */
+/* line 41, ../../../app/stylesheets/screen.scss */
 body.general #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 44, ../../../app/stylesheets/screen.scss */
+/* line 45, ../../../app/stylesheets/screen.scss */
 body.general header, body.general footer, body.general section {
   display: inline;
   float: left;
@@ -1319,7 +1319,7 @@ body.general header, body.general footer, body.general section {
 * html body.general header, * html body.general footer, * html body.general section {
   overflow-x: hidden;
 }
-/* line 49, ../../../app/stylesheets/screen.scss */
+/* line 50, ../../../app/stylesheets/screen.scss */
 body.general header a, body.general footer a, body.general section a {
   text-decoration: none;
 }
@@ -1327,18 +1327,18 @@ body.general header a, body.general footer a, body.general section a {
 body.general header a:hover, body.general footer a:hover, body.general section a:hover {
   text-decoration: underline;
 }
-/* line 54, ../../../app/stylesheets/screen.scss */
+/* line 55, ../../../app/stylesheets/screen.scss */
 body.general header, body.general #content {
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   background: white;
 }
-/* line 59, ../../../app/stylesheets/screen.scss */
+/* line 60, ../../../app/stylesheets/screen.scss */
 body.general header {
   position: relative;
 }
-/* line 62, ../../../app/stylesheets/screen.scss */
+/* line 63, ../../../app/stylesheets/screen.scss */
 body.general header h1 {
   text-indent: -119988px;
   overflow: hidden;
@@ -1351,7 +1351,7 @@ body.general header h1 {
   padding-left: 40px;
   margin-bottom: 0;
 }
-/* line 69, ../../../app/stylesheets/screen.scss */
+/* line 70, ../../../app/stylesheets/screen.scss */
 body.general header nav {
   margin: 0;
   padding: 0;
@@ -1387,36 +1387,38 @@ body.general header nav li:first-child, body.general header nav li.first {
 body.general header nav li:last-child, body.general header nav li.last {
   padding-right: 0;
 }
-/* line 77, ../../../app/stylesheets/screen.scss */
+/* line 78, ../../../app/stylesheets/screen.scss */
 body.general header nav ul {
   margin: 0 0.5em;
   padding: 0;
 }
-/* line 80, ../../../app/stylesheets/screen.scss */
+/* line 81, ../../../app/stylesheets/screen.scss */
 body.general header nav ul li {
   padding: 0.5em 0;
 }
-/* line 82, ../../../app/stylesheets/screen.scss */
+/* line 83, ../../../app/stylesheets/screen.scss */
 body.general header nav ul li a {
   padding: 0 5px;
   font-weight: bold;
   color: white;
 }
-/* line 92, ../../../app/stylesheets/screen.scss */
+/* line 93, ../../../app/stylesheets/screen.scss */
 body.general section {
   font-size: 120%;
   margin-top: 18px;
 }
-/* line 97, ../../../app/stylesheets/screen.scss */
+/* line 98, ../../../app/stylesheets/screen.scss */
 body.general #content {
   padding-left: 40px;
 }
-/* line 101, ../../../app/stylesheets/screen.scss */
+/* line 102, ../../../app/stylesheets/screen.scss */
 body.general footer {
-  margin-top: 18px;
-  padding-left: 40px;
+  background-color: #6495ff;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
-/* line 104, ../../../app/stylesheets/screen.scss */
+/* line 106, ../../../app/stylesheets/screen.scss */
 body.general footer nav {
   margin: 0;
   padding: 0;
@@ -1444,8 +1446,13 @@ body.general footer nav li:first-child, body.general footer nav li.first {
 body.general footer nav li:last-child, body.general footer nav li.last {
   padding-right: 0;
 }
+/* line 110, ../../../app/stylesheets/screen.scss */
+body.general footer pre {
+  margin-top: 18px;
+  padding-left: 40px;
+}
 
-/* line 111, ../../../app/stylesheets/screen.scss */
+/* line 118, ../../../app/stylesheets/screen.scss */
 body#demo {
   background-color: #6495ed;
 }

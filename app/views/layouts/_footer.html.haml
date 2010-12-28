@@ -1,1 +1,7 @@
-%p Total Iceland #{ link_to " on GitHub" , "git@github.com:thordurg08/totaliceland.git"}
+%nav
+  %ul
+    %li{:class => "first"}
+      = link_to "Contact".html_safe, contact_path
+    %li{:class => "last"}
+      = link_to "About".html_safe, about_path
+%br

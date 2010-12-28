@@ -25,6 +25,7 @@
 $white: #FFF;
 $ti-blue: #3D34FA;
 $background: #6495ED;
+$background-footer: #6495FF;
 
 /* Constants */
 
@@ -99,10 +100,16 @@ body.general {
   }
 
   footer {
-    margin-top: $grid-height;
-    padding-left: $grid-span;
+
+    background-color: $background-footer;
+    @include rounded(3px); 
     nav {
       @include horizontal-list;
+      
+    }
+    pre {
+      margin-top: $grid-height;
+      padding-left: $grid-span;
     } 
   }
 
