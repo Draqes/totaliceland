@@ -13,6 +13,25 @@ describe UsersController do
        get 'new'
        response.should have_selector("title", :content => "Sign up")
      end
-
   end
+
+  describe "GET 'show'" do
+
+    before(:each) do
+      @user = Factory(:user)
+    end
+
+    it "should be successful" do
+      get :show, :id => @user
+      response.should be_success
+    end
+ 
+    it "should find the first user" do
+      get :show, :id => @user
+      # consider stubbing for seperating model and 
+      # controller layers in Rails tests
+      assigns(:user).should == @user
+    end
+  end 
+
 end
