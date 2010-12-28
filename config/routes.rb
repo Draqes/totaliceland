@@ -2,12 +2,13 @@ Totaliceland::Application.routes.draw do
   get "pages/home"
   get "pages/contact"
   get "pages/about"
-
-  resources :users
+  get "users/new"
 
   root :to => "pages#home"
   match '/about', :to => "pages#about"
-  match '/signin', :to => "pages#signin"
+  match '/contact', :to => "pages#contact"
+
+  match '/signup', :to => "users#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
