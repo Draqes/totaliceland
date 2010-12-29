@@ -1,2 +1,19 @@
-%h1 Sign in
+- form_for(@user) do |f|
+  %fieldset
+    = render 'shared/error_messages'
+    %legend Sign Up
+    %p
+      = f.label :name
+      = f.text_field :name, :class => "text"
+    %p
+      = f.label :email
+      = f.text_field :email, :class => "text"
+    %p
+      = f.label :password
+      = f.password_field :password, :class => "text"
+    %p
+      = f.label :password_confirmation, "Confirmation"
+      = f.password_field :password_confirmation, :class => "text"
+    %p
+      = f.submit "Sign up"
 

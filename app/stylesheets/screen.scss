@@ -1,15 +1,16 @@
-@import "blueprint/reset";
-@import "partials/base";
+
 @import "blueprint";
+@import "partials/base";
 @import "blueprint/scaffolding";
 @import "compass/utilities";
+@import "compass/reset";
 
 @include blueprint-scaffolding;
 @include blueprint-utilities;
 @include blueprint-grid;
 @include blueprint-typography;
 @include blueprint-debug;
-@include blueprint-form;
+@include blueprint-form; 
 @include blueprint-scaffolding;
 
 /* Mixins */
@@ -57,6 +58,8 @@ body.general {
     background: $white;
   }
 
+/* Header */
+
   header {
     position: relative;
     
@@ -90,14 +93,67 @@ body.general {
     }
   }
 
+/* Section */
+
   section {
     font-size: 120%;
     margin-top: $grid-height;
+    @include blueprint-inline-form
+  }
+
+  fieldset {
+    width: 350px;
   }
 
   #content {
-    padding-left: $grid-span;     
+    padding-left: $grid-span;       
   }
+
+  .error, .alert, .notice, .success, .info {
+    padding:0.8em;
+    margin-bottom:1em;
+    border:2px solid #ddd;
+  }
+
+  .error, .alert {
+    background:#fbe3e4;
+    color:#8a1f11;
+    border-color:#fbc2c4;
+  }
+
+  .field_with_errors label {
+    color:#8A1F11;
+  }
+
+  .notice {
+    background:#fff6bf;
+    color:#514721;
+    border-color:#ffd324;
+  }
+  .success {
+    background:#e6efc2;
+    color:#264409;
+    border-color:#c6d880;
+  }
+  .info {
+    background:#d5edf8;
+    color:#205791;
+    border-color:#92cae4;
+  }
+  .error a, .alert a {
+    color:#8a1f11;
+  }
+  .notice a {
+    color:#514721;
+  }
+  .success a {
+    color:#264409;
+  }
+  .info a {
+    color:#205791;
+  } 
+
+/* Footer */
 
   footer {
 
