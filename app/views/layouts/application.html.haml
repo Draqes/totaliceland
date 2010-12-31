@@ -15,8 +15,7 @@
       %section
         %div{:id => "content"}
           = flash.each do |key, value|
-            %div{:class => key}
-              = value
+            = content_tag(:div, value, :class => key)
           = yield
       %footer
         = render "layouts/footer"

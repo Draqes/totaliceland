@@ -35,6 +35,8 @@ describe "Users" do
         end.should change(User, :count).by(1)
       end
 
+      it "should clear the password field for failed submissions"
+
     end
 
   end
