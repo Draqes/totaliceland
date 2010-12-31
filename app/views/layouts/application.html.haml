@@ -14,7 +14,7 @@
       = render "layouts/header"
       %section
         %div{:id => "content"}
-          - flash.each do |key, value|
+          = flash.each do |key, value|
             %div{:class => key}
               = value
           = yield
