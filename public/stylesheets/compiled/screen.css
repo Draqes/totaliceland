@@ -1401,7 +1401,7 @@ body.general fieldset {
 }
 /* line 108, ../../../app/stylesheets/screen.scss */
 body.general #content {
-  padding-left: 40px;
+  padding: 40px;
 }
 /* line 112, ../../../app/stylesheets/screen.scss */
 body.general .error, body.general .alert, body.general .notice, body.general .success, body.general .info {
