@@ -3,16 +3,11 @@ Totaliceland::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
 
   root :to => "pages#home"
-
-  get "sessions/new"
-
-  get "pages/home"
-  get "pages/contact"
-  get "pages/about"
  
   match '/about', :to => "pages#about"
   match '/contact', :to => "pages#contact"
   match '/signup', :to => "users#new"
+  match '/sessions', :to => "sessions#create"
   match '/signin', :to => "sessions#new"
   match '/signout', :to => "sessions#destroy"
 
@@ -71,5 +66,5 @@ Totaliceland::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end
