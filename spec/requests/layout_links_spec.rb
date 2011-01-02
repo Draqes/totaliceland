@@ -22,15 +22,42 @@ describe "LayoutLinks" do
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
-    response.should have_selector('title', :content => "About")
-    click_link "Contact"
-    response.should have_selector('title', :content => "Contact")
     click_link "Home"
     response.should have_selector('title', :content => "Home")
-    click_link "Sign Up"
-    response.should have_selector('title', :content => "Sign up")
-
+    click_link "Sign In"
+    response.should have_selector('title', :content => "Sign in")
   end
 
+  # Testing signed in/out
+
+  describe "when not signed in" do
+    it "should have a signin in link" do
+      visit root_path
+      response.should have_selector("a", :href => signin_path,
+                                    :content => "Sign In")
+    end
+  end
+
+  describe "when signed in" do
+  
+    before(:each) do
+      @user = Factory(:user)
+      visit signin_path
+      fill_in :email,     :with => @user.email
+      fill_in :password,  :with => @user.password
+      click_button
+    end
+
+    it "should have a signout link" do
+      visit root_path
+      response.should have_selector("a", :href => signout_path,
+                                    :content => "Sign Out")
+    end
+
+    it "should have a profile link" do
+      visit root_path
+      response.should have_selector("a", :href => user_path(@user), :content => "Profile")
+    end
+
+  end
 end

@@ -38,6 +38,29 @@ describe "Users" do
       it "should clear the password field for failed submissions"
 
     end
-
   end
+
+  describe "sign in/out" do
+
+    describe "failure" do  
+      it "should not sign a user in" do
+        visit signin_path    
+        fill_in :email,   :with => ""
+        fill_in :password, :with => ""
+        click_button
+        response.should have_selector("div.error", :content => "Invalid")
+      end
+    end
+
+    describe "success" do
+      it "should sign a user in and out" do
+        user = Factory(:user)
+        integration_sign_in(user) #helper
+        controller.should be_signed_in
+        click_link "Sign Out"
+        controller.should_not be_signed_in
+      end
+    end
+  end
+
 end

@@ -4,5 +4,11 @@
     %ul
       %li{:class => "first"}
         = link_to "Home".html_safe, root_path
-      %li{:class => "last"}
-        = link_to "Sign In".html_safe, signin_path
+      - if signed_in?
+        %li
+          = link_to "Profile", current_user
+        %li{:class => "last"}
+          = link_to "Sign Out".html_safe, signout_path, :method => :delete
+      - else
+        %li{:class => "last"}
+          = link_to "Sign In", signin_path
