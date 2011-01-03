@@ -14,10 +14,17 @@ module SessionsHelper
     current_user = nil
   end
 
-  # assignment function
   def current_user
     @current_user ||= user_from_remember_token
     # assigned only if @current_user is undefined
+  end
+
+  def current_user?(user)
+    user == current_user 
+  end
+
+  def deny_access
+    redirect_to signin_path, :notice => "Please sign in!"
   end
 
   private

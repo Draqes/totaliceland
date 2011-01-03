@@ -32,9 +32,10 @@ describe UsersController do
 
     before(:each) do
       @user = Factory(:user)
+      test_sign_in(@user)    
     end
 
-    it "should be successful" do
+    it "should be successful" do  
       get :show, :id => @user
       response.should be_success
     end
@@ -55,8 +56,6 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1", :content => @user.name)
     end
-
-    it "should have a profile image"
 
   end
 
@@ -107,7 +106,7 @@ describe UsersController do
 
       it "should have a welcome message" do
         post :create, :user => @attr 
-        flash[:success].should =~ /welcome to Total Iceland/i
+        flash[:success].should =~ /Welcome/i
       end
 
       it "should sign the user in" do
@@ -117,5 +116,39 @@ describe UsersController do
 
     end
   end 
+
+  describe "authentiction of show page" do
+
+    before(:each) do
+      @user = Factory(:user)
+    end
+
+    describe "for non signed in users " do
+
+      it "should deny access to 'show'" do
+        get :show, :id => @user
+        response.should redirect_to(signin_path)
+      end
+
+      it "should test more user controller actions"
+ 
+    end
+
+    describe "for signed in users" do
+    
+      before(:each) do
+        wrong_user = Factory(:user, :email => "user@example.net")
+        test_sign_in(wrong_user)
+      end
+
+      it "should require a matching user for 'show'" do
+        get :show, :id => @user
+        response.should redirect_to(root_path)
+      end
+
+    end
+
+  end
+
 
 end
